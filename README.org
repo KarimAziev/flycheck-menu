@@ -1,0 +1,55 @@
+#+OPTIONS: ^:nil tags:nil num:nil
+
+* About
+
+Simple transient menu for =flycheck=.
+
+* Table of Contents                                       :TOC_2_gh:QUOTE:
+#+BEGIN_QUOTE
+- [[#about][About]]
+- [[#requirements][Requirements]]
+- [[#installation][Installation]]
+  - [[#with-use-package-and-straightel][With use-package and straight.el]]
+  - [[#manual-installation][Manual installation]]
+- [[#usage][Usage]]
+#+END_QUOTE
+
+* Requirements
+
+| Name        | Version |
+|-------------+---------|
+| Emacs       |    28.1 |
+| ~flycheck~  |      32 |
+| ~transient~ |   0.6.0 |
+
+
+* Installation
+
+** With use-package and straight.el
+#+begin_src elisp :eval no
+(use-package flycheck-menu
+  :straight (flycheck-menu
+             :repo "KarimAziev/flycheck-menu"
+             :type git
+             :host github)
+  :commands (flycheck-menu))
+#+end_src
+
+** Manual installation
+
+Download the source code and put it wherever you like, e.g. into =~/.emacs.d/flycheck-menu/=
+
+#+begin_src shell :eval no
+git clone https://github.com/KarimAziev/flycheck-menu.git ~/.emacs.d/flycheck-menu/
+#+end_src
+
+Add the downloaded directory to the load path:
+
+#+begin_src elisp :eval no
+(add-to-list 'load-path "~/.emacs.d/flycheck-menu/")
+(require 'flycheck-menu)
+#+end_src
+
+* Usage
+
+Run ~M-x flycheck-menu~.
